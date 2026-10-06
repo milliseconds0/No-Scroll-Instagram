@@ -26,9 +26,11 @@ The service is limited to the official Instagram package (`com.instagram.android
 ## Install from a release APK
 
 1. Download the APK from the project's [release page](https://github.com/milliseconds0/No-Scroll-Instagram/releases/).
-2. Open the app, then go to **Open Accessibility settings** > **Installed applications** > **No-Scroll Instagram guard**.
-3. Enable the service and tap **Authorize**.
-4. Complete the [Start Instagram in Messages](#start-instagram-in-messages) step above.
+> [!IMPORTANT]
+> 2. Android may block its accessibility service since its unsigned until you allow restricted settings for the app. Open **Settings** > **Apps** > **No-Scroll Instagram**, tap the **⋮** menu, choose **Allow restricted settings**, and confirm. Then return to the app and continue with the steps below.
+3. Open the app, then go to **Open Accessibility settings** > **Installed applications** > **No-Scroll Instagram guard**.
+4. Enable the service and tap **Authorize**.
+5. Complete the [Start Instagram in Messages](#start-instagram-in-messages) step above.
 
 ## Build from source
 
