@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">No-Scroll Instagram</string>
+    <string name="accessibility_service_description">Sends Instagram\'s Home and Reels navigation tabs to Direct Messages.</string>
+</resources>
