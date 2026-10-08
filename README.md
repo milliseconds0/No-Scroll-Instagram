@@ -11,8 +11,6 @@ An Android accessibility helper that sends Instagram's **Home** and **Reels** ta
 > 1. Long-press the Instagram icon in your launcher.
 > 2. Long-press **Messages** in the shortcut menu, then drag it to your home screen if your launcher supports pinned shortcuts.
 > 3. Use that Messages shortcut, not the normal Instagram icon whenever you want to start in Direct Messages.
->
-> Instagram may rename or move this shortcut in future updates.
 
 ## What it does
 
@@ -68,10 +66,10 @@ gradle wrapper --gradle-version 8.7
 
 The APK is created at `app/build/outputs/apk/debug/app-debug.apk`.
 
-To install it with Android Platform Tools:
+Then send it to your phone, or install it with ADB:
 
 ```powershell
 adb install -r app\build\outputs\apk\debug\app-debug.apk
 ```
 
-After installing, enable the guard and create the Messages shortcut as described above.
+After installing, enable the guard and create the [Messages shortcut](#start-instagram-in-messages) as described above.
