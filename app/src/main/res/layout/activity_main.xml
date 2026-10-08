@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Tapping Instagram\'s Home or Reels tab opens Direct Messages. Use Instagram\'s Messages launcher shortcut to start directly in DMs."
+            android:text="Tapping or swiping to Instagram\'s Home or Reels tab opens Direct Messages. Use Instagram\'s Messages launcher shortcut to start directly in DMs."
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView

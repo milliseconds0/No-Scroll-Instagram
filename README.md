@@ -18,7 +18,7 @@ An Android accessibility helper that sends Instagram's **Home** and **Reels** ta
 
 Android does not allow a standard app to disable controls inside Instagram. No-Scroll Instagram instead uses Android's supported `AccessibilityService` mechanism to respond to those controls:
 
-1. Tap **Home** or **Reels** in Instagram's bottom navigation.
+1. Tap or swipe to **Home** or **Reels** in Instagram's bottom navigation.
 2. The service opens Direct Messages immediately.
 
 The service is limited to the official Instagram package (`com.instagram.android`). It does not use the network, collect content, or request Instagram credentials.

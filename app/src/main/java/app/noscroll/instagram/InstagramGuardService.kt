@@ -11,7 +11,7 @@ class InstagramGuardService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         if (event.packageName?.toString() != InstagramNavigator.INSTAGRAM_PACKAGE) return
 
-        if (event.eventType == AccessibilityEvent.TYPE_VIEW_CLICKED && isBlockedNavigation(event)) {
+        if (isNavigationEvent(event) && isBlockedNavigation(event)) {
             redirectToMessages()
         }
     }
@@ -43,8 +43,14 @@ class InstagramGuardService : AccessibilityService() {
         return bounds.centerY() > screenHeight * BOTTOM_NAV_TOP_FRACTION
     }
 
+    private fun isNavigationEvent(event: AccessibilityEvent): Boolean {
+        return event.eventType == AccessibilityEvent.TYPE_VIEW_CLICKED ||
+            event.eventType == AccessibilityEvent.TYPE_VIEW_SELECTED ||
+            event.eventType == AccessibilityEvent.TYPE_VIEW_SCROLLED
+    }
+
     companion object {
-        private const val REDIRECT_COOLDOWN_MS = 900L
+        private const val REDIRECT_COOLDOWN_MS = 300L
         private const val BOTTOM_NAV_TOP_FRACTION = 0.62f
     }
 }
