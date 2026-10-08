@@ -2,13 +2,17 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingStart="24dp"
+        android:paddingTop="32dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="24dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,15 +23,23 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Tapping or swiping to Instagram\'s Home or Reels tab opens Direct Messages. Use Instagram\'s Messages launcher shortcut to start directly in DMs."
+            android:layout_marginTop="8dp"
+            android:text="Keep Instagram focused by sending Home and Reels back to Messages."
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/statusText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/guardSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Protection enabled"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <Button
@@ -35,13 +47,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Enable accessibility guard" />
+            android:text="Open accessibility settings" />
+
+        <Button
+            android:id="@+id/appSettingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Open app settings" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:text="This app does not read, store, or send your Instagram content. Accessibility access is used only while Instagram is on screen to recognize the two navigation buttons and open Direct Messages."
+            android:layout_marginTop="24dp"
+            android:text="Use App settings if Android asks you to allow restricted settings."
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
     </LinearLayout>
 </ScrollView>

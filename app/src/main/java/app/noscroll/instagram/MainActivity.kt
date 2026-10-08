@@ -6,6 +6,7 @@ import android.content.Intent
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.os.Bundle
 import android.provider.Settings
+import android.net.Uri
 import android.view.accessibility.AccessibilityManager
 import androidx.appcompat.app.AppCompatActivity
 import app.noscroll.instagram.databinding.ActivityMainBinding
@@ -18,20 +19,33 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.accessibilityButton.setOnClickListener {
-            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-        }
+        binding.accessibilityButton.setOnClickListener { openAccessibilitySettings() }
+        binding.appSettingsButton.setOnClickListener { openAppSettings() }
+        binding.guardSwitch.setOnClickListener { openAccessibilitySettings() }
     }
 
     override fun onResume() {
         super.onResume()
         val enabled = isGuardEnabled(this)
         binding.statusText.text = if (enabled) {
-            "Guard is ON. Instagram Home and Reels redirect to Direct Messages."
+            "Guard is on"
         } else {
-            "Guard is OFF. Enable it in Android Accessibility settings to activate protection."
+            "Guard is off"
         }
-        binding.accessibilityButton.text = if (enabled) "Open accessibility settings" else "Enable accessibility guard"
+        binding.guardSwitch.isChecked = enabled
+    }
+
+    private fun openAccessibilitySettings() {
+        startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+    }
+
+    private fun openAppSettings() {
+        startActivity(
+            Intent(
+                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.parse("package:$packageName")
+            )
+        )
     }
 
     private fun isGuardEnabled(context: Context): Boolean {
